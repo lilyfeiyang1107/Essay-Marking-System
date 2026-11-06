@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#315341">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="文墨">
+  <meta name="description" content="文墨：H1华文作文学习APP，记叙文与议论文批改、图解写作、段落优化与范文旁批。">
+  <link rel="manifest" href="/Essay-Marking-System/static/manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="/Essay-Marking-System/static/art/wenmo-192.png">
+  <link rel="apple-touch-icon" href="/Essay-Marking-System/static/art/wenmo-180.png">
+  <title>文墨 · H1 华文作文工坊</title>
+  <link rel="stylesheet" href="/Essay-Marking-System/static/style.css">
+  <link rel="stylesheet" href="/Essay-Marking-System/static/mobile-app.css">
+  <script src="/Essay-Marking-System/static/site-config.js" defer></script>
+  <script src="/Essay-Marking-System/static/site-api.js" defer></script>
+  <script src="/Essay-Marking-System/static/app.js" defer></script>
+  <script src="/Essay-Marking-System/static/mobile-app.js" defer></script>
+</head>
+<body>
+<aside class="sidebar">
+  <a class="brand" href="/Essay-Marking-System/" aria-label="文墨首页"><img class="brand-app-icon" src="/Essay-Marking-System/static/art/wenmo-192.png" width="44" height="44" alt="文墨彩色应用图标"><span>文墨<small>WENMO STUDIO</small></span></a>
+  <div class="workspace-label">学习空间 <span>H1 华文</span></div>
+  <nav aria-label="主导航">
+    <button class="nav-item active" data-view="workshop"><span>▧</span> 作文工坊 <span class="nav-dot"></span></button>
+    <button class="nav-item" data-view="lessons"><span>▱</span> 图解写作</button>
+    <button class="nav-item" data-view="rubric"><span>▤</span> 评分标准</button>
+    <button class="nav-item" id="guide-button"><span>◎</span> 使用指南</button>
+  </nav>
+  <div class="sidebar-note"><span class="small-flower">✳</span><p>好文章，<br>从每一次修改开始。</p><small>让思考更深，让表达更好。</small></div>
+  <div class="profile"><span class="avatar">学</span><div>我的学习空间<small>学生 / 教师均可使用</small></div><span class="profile-dot"></span></div>
+</aside>
+<div class="app-shell">
+  <header class="topbar"><div>学习空间 <span>/</span> <b id="breadcrumb">作文工坊</b></div><div class="topbar-right"><button class="install-button" id="install-button">安装 APP ↗</button><span class="tiny-dot"></span> H1 A 水准 <span class="vertical-line"></span><button id="role-button" class="role-button">学生视角 ⇄</button></div></header>
+  <div class="offline-banner" id="offline-banner" role="status" hidden>你正在离线阅读 · 图解写作与已缓存示例仍可查看，上传和实时批改需联网。</div>
+  <div class="offline-banner" id="hosting-notice" role="status" hidden></div>
+  <main>
+    <section id="workshop-view">
+      <div class="heading app-hero"><div class="hero-copy"><div class="eyebrow">你的随身华文写作教练 · H1 CHINESE</div><h1>让故事有温度，<br>让观点有力量<span>。</span></h1><p>写下你的思考，我们陪你一步步打磨。</p><div class="hero-actions"><button class="hero-primary" id="hero-write">开始我的作文 <span>→</span></button><button class="quiet-button" id="demo-button"><span>✧</span> 体验一篇示例</button></div><div class="hero-chips"><span>内容 + 表达 / 60 分</span><span>逐段反馈</span><span>范文旁批</span></div></div><img class="hero-art" src="/Essay-Marking-System/static/art/writing-garden.svg" alt="打开的作文簿上，文字化作山丘与树木，象征思考和表达的成长" width="560" height="370"></div>
+      <section class="feature-ribbon" aria-label="批改包含的功能"><div><span>01</span><strong>文体分析</strong><small>看见文章的骨架</small></div><div><span>02</span><strong>错字纠正</strong><small>让每个字更准确</small></div><div><span>03</span><strong>段落精修</strong><small>把思路变成好句</small></div><div><span>04</span><strong>范文旁批</strong><small>读懂好文章的写法</small></div></section>
+      <div class="workflow-strip"><span class="current"><b>01</b> 上传作文</span><i></i><span id="step-review"><b>02</b> 多维批改</span><i></i><span id="step-grow"><b>03</b> 修改与提升</span><span class="strip-note">依据 H1 华文校内评分标准</span></div>
+      <div class="workspace-grid">
+        <section class="editor-card card">
+          <div class="section-heading"><div><span class="section-index">01</span><h2>开始你的写作之旅</h2></div><span class="light-tag">支持学生与教师上传</span></div>
+          <p class="section-subtitle">选择文体，上传作文，或直接粘贴文字。</p>
+          <div class="genre-picker" role="group" aria-label="作文文体">
+            <button class="genre-card selected" data-genre="narrative"><img class="genre-art" src="/Essay-Marking-System/static/art/story.svg" alt="" width="130" height="100"><span><strong>记叙文</strong><small>写下故事，表达真情</small></span><span class="radio-dot"></span></button>
+            <button class="genre-card" data-genre="argumentative"><img class="genre-art" src="/Essay-Marking-System/static/art/argument.svg" alt="" width="130" height="100"><span><strong>议论文</strong><small>清晰立论，深入思辨</small></span><span class="radio-dot"></span></button>
+          </div>
+          <div class="upload-zone" id="drop-zone"><div class="upload-icon">↥</div><strong>把作文带到这里</strong><p>拖放文件，或选择对应文体上传</p><div class="upload-buttons"><button class="upload-button" data-upload="narrative">↑ 上传记叙文</button><button class="upload-button" data-upload="argumentative">↑ 上传议论文</button></div><small>DOCX / PDF（文字版）/ TXT · 最大 8 MB</small><span id="file-status" aria-live="polite"></span></div>
+          <input type="file" id="essay-file" accept=".txt,.docx,.pdf" hidden>
+          <div class="or-divider"><span>也可以直接输入</span></div>
+          <div class="field-top"><label for="topic">作文题目 <span>*</span></label><button class="text-button" id="topic-upload">↑ 上传题目</button></div>
+          <input type="file" id="topic-file" accept=".txt,.docx,.pdf" hidden>
+          <textarea id="topic" rows="2" maxlength="2000" placeholder="请输入完整题目及题目要求，例如：那一次，我学会了倾听" required></textarea>
+          <div class="field-top body-label"><label for="essay">作文正文 <span>*</span></label><span id="word-count">0 字</span></div>
+          <textarea id="essay" maxlength="20000" placeholder="在这里粘贴你的作文……&#10;&#10;建议保留原有分段，让批改更准确。&#10;上传后也可以在这里核对、修改文字。" required></textarea>
+          <div class="editor-footer"><span>ⓘ 建议不少于 500 字 · 支持逐段批改</span><button class="text-button" id="clear-button">清空内容</button></div>
+          <button class="primary-button" id="review-button"><span>✧</span> 开始批改 <span>→</span></button>
+          <p class="privacy-note">♧ 文件仅在内存中解析；开始批改后，文字将发送至 OpenAI。</p>
+          <div id="feedback" role="status" aria-live="polite"></div>
+        </section>
+        <aside class="insights-column">
+          <section class="score-intro card"><div class="mini-eyebrow">每一分，都有依据</div><h2>不止评分，更看见成长。</h2><div class="score-equation"><div><strong>30</strong><span>内容分</span></div><b>+</b><div><strong>30</strong><span>表达分</span></div><b>=</b><div class="total"><strong>60</strong><span>总分</span></div></div><div class="score-divider"></div><p><span>✓</span> 紧扣题意，关注思想与材料</p><p><span>✓</span> 结构、语言、错字与标点逐项检查</p><button class="text-button" id="rubric-link">查看完整评分标准 <span>↗</span></button></section>
+          <section class="focus-card card"><div class="mini-eyebrow">有针对性的分析</div><div class="focus-title"><h2 id="focus-title">让故事有画面、有温度</h2><span>↗</span></div><div id="focus-list"></div><div class="focus-bottom">因文而异的反馈，具体到每一处细节。</div></section>
+          <section class="outcomes-card"><span>✦</span><div><h3>从一篇作文，走向下一次进步</h3><p>逐项纠错 · 段落优化 · 范文与旁批</p></div></section>
+          <div class="connection-note" id="connection-status">正在检查批改服务…</div>
+        </aside>
+      </div>
+      <section id="report-section" class="report-section" hidden>
+        <div class="report-heading"><div><div class="eyebrow">YOUR WRITING, A LITTLE BETTER.</div><h2>这一次，看见你的进步</h2><p id="report-meta"></p></div><button class="quiet-button" id="export-button">↓ 导出批改报告</button></div>
+        <div id="demo-banner" class="demo-banner" hidden>示例体验：以下为预设教学示例，不是对你上传作文的实时批改。</div>
+        <div class="report-tabs" role="tablist" aria-label="批改报告"><button role="tab" aria-selected="true" data-tab="overview">评分与分析</button><button role="tab" aria-selected="false" data-tab="corrections">错别字纠正 <span id="correction-count">0</span></button><button role="tab" aria-selected="false" data-tab="rewrite">段落优化</button><button role="tab" aria-selected="false" data-tab="model">范文与旁批</button></div>
+        <div id="report-content"></div>
+      </section>
+    </section>
+    <section id="lessons-view" hidden>
+      <div class="eyebrow">SEE THE IDEA. FIND YOUR VOICE.</div><h1>把写作方法，画给你看<span>。</span></h1><p class="lesson-intro">先读懂结构，再写出自己的故事与观点。</p>
+      <div class="lesson-grid">
+        <article class="card lesson-card"><div class="lesson-cover story-cover"><img src="/Essay-Marking-System/static/art/story.svg" alt="雨伞、人物与心形：由生活片段发现情感变化" width="260" height="200"><span>01 / 记叙文</span></div><div class="lesson-body"><span class="pill">情节 · 详略 · 心理</span><h2>好故事，有一条情绪曲线</h2><p>重要的不是“发生了什么”，而是“这件事怎样改变了我”。</p><figure class="emotion-figure"><svg viewBox="0 0 360 130" role="img" aria-labelledby="emotion-title"><title id="emotion-title">故事由铺垫开始，情绪在冲突处上升，在转折后逐渐收束</title><path d="M20 105H340" stroke="#d5dfcb"/><path d="M25 95Q85 100 125 55T205 25T280 75L335 88" fill="none" stroke="#9b6c50" stroke-width="3"/><g fill="#315341"><circle cx="25" cy="95" r="5"/><circle cx="125" cy="55" r="5"/><circle cx="205" cy="25" r="5"/><circle cx="335" cy="88" r="5"/></g><g fill="#617158" font-size="12"><text x="12" y="123">铺垫</text><text x="108" y="123">冲突</text><text x="188" y="123">转折</text><text x="310" y="123">收束</text></g></svg><figcaption>转折处放慢脚步，用细节写出内心变化。</figcaption></figure><details><summary>看一组“心理描写”对比 <span>＋</span></summary><p class="lesson-before">原句：我很紧张，不敢告诉母亲。</p><p class="lesson-after">改写：我把试卷折了又折，手心的汗洇湿了纸角。“妈……”话到嘴边，我又低下了头。</p><p>动作＋身体反应＋欲言又止，让读者感受到紧张。</p></details><button class="lesson-start" data-start-genre="narrative">试着写一篇记叙文 →</button></div></article>
+        <article class="card lesson-card"><div class="lesson-cover argument-cover"><img src="/Essay-Marking-System/static/art/argument.svg" alt="对话气泡与阶梯：观点需要材料和解释的支撑" width="260" height="200"><span>02 / 议论文</span></div><div class="lesson-body"><span class="pill">论点 · 论证 · 扣题</span><h2>让观点，站在论证的台阶上</h2><p>举完例子还不够。再问一句：“这个例子为什么能证明我的观点？”</p><ol class="peel-map"><li><b>P</b><span><strong>Point · 论点</strong>这一段要证明什么？</span></li><li><b>E</b><span><strong>Evidence · 例证</strong>有什么具体材料支撑？</span></li><li><b>E</b><span><strong>Explain · 解释</strong>为什么成立？有哪些条件？</span></li><li><b>L</b><span><strong>Link · 扣题</strong>怎样回到题目和中心立场？</span></li></ol><details><summary>看一组“论证深度”对比 <span>＋</span></summary><p class="lesson-before">原句：阅读能让人成长，所以我们应该多阅读。</p><p class="lesson-after">改写：阅读让我们接触不同处境下的选择。在比较人物的理由与后果时，我们练习换位思考。不过，成长还需要反思，而不只是读完一本书。</p><p>补上作用机制与条件，比重复结论更有说服力。</p></details><button class="lesson-start" data-start-genre="argumentative">试着写一篇议论文 →</button></div></article>
+      </div>
+      <section class="practice-card card"><div><span class="eyebrow">一分钟练习</span><h2>这句话，问题出在哪里？</h2><p>“只要勇敢追求兴趣，所有人就一定能成功。”</p></div><div class="quiz-options" role="group" aria-label="选择论证问题"><button data-answer="incorrect">例子太多，篇幅过长</button><button data-answer="correct">结论绝对，忽略条件</button><button data-answer="incorrect">没有使用华丽的词语</button></div><p id="quiz-feedback" role="status" aria-live="polite">选一个答案，看看你的判断。</p></section>
+    </section>
+    <section id="rubric-view" hidden><div class="eyebrow">A CLEAR STANDARD.</div><h1>评分有据，进步有方向。</h1><p class="muted">依据你提供的《H1CL A 水准作文评分标准》PDF。分项权重供教师参考。</p><div class="rubric-layout"><section class="card rubric-card"><h2>内容 / 30 分</h2><p>审题立意 <b>14 分</b> · 取材 <b>16 分</b></p><h2>表达 / 30 分</h2><p>结构组织 <b>12 分</b> · 遣词造句 <b>12 分</b> · 其他 <b>6 分</b></p><p class="muted">其他包括错别字、标点与格式。记叙文兼顾情节、描写和情感；议论文兼顾论点、论据、分析及扣题。</p></section><section class="card rubric-card"><h2>分项等级（每项30分）</h2><table><thead><tr><th>得分</th><th>等级</th></tr></thead><tbody><tr><td>25–30</td><td>1 · 优秀</td></tr><tr><td>21–24</td><td>2+ · 良好</td></tr><tr><td>17–20</td><td>2− · 中等</td></tr><tr><td>13–16</td><td>3+ · 待加强</td></tr><tr><td>7–12</td><td>3− · 薄弱</td></tr><tr><td>0–6</td><td>4 · 严重不足</td></tr></tbody></table></section></div><section class="card rubric-card"><h2>字数与教师复核</h2><p>正文统计汉字及英文单词 / 数字组，不含标点、空格及题目；这是系统统计口径，教师可按校内口径复核。</p><p>PDF列明：450–490字扣2分；400–449字扣4分；399字及以下扣6分。491–499字未列明。批改报告保留原始内容分与表达分，字数扣分由教师确认后单独显示。</p><p>离题及偏题采用PDF允许的逐项评分法，不额外套用另一种总分上限。Excel的示例等级和统计数据不作为学生实际成绩。</p></section></section>
+    <footer>文墨 · H1 华文作文工坊 <span>认真对待每一次表达</span></footer>
+  </main>
+</div>
+<nav class="mobile-dock" aria-label="APP导航"><button data-view="workshop" class="active"><span>✎</span>作文工坊</button><button data-view="lessons"><span>▱</span>图解写作</button><button id="mobile-report"><span>▤</span>批改报告</button><button id="mobile-install"><span>↓</span>安装APP</button></nav>
+<dialog id="install-dialog"><button class="dialog-close" id="close-install" aria-label="关闭安装说明">×</button><img class="install-logo" src="/Essay-Marking-System/static/art/wenmo-192.png" alt="文墨APP图标" width="72" height="72"><div class="eyebrow">把写作工坊，放进口袋</div><h2>一个图标，打开你的作文工坊</h2><p>添加到主屏幕后，点击这个彩色“文墨”图标即可进入应用。</p><p id="install-context">使用公网 HTTPS 地址访问后，可在支持的浏览器中安装。</p><ol><li><b>iPhone / iPad：</b>用 Safari 打开，点击“分享”，选择“添加到主屏幕”。</li><li><b>Android：</b>用 Chrome 打开，点击菜单中的“安装应用”或“添加到主屏幕”。</li><li><b>电脑：</b>使用支持安装的 Chrome 或 Edge，点击地址栏中的安装图标。</li></ol><p>首次联网打开后，图解写作和教学示例支持离线阅读。上传及AI批改需要联网；离线不保存学生作文。</p><button class="primary-button" id="install-done">明白了</button></dialog>
+<dialog id="guide"><button id="close-guide" class="dialog-close" aria-label="关闭使用指南">×</button><div class="eyebrow">A SMALL GUIDE.</div><h2>从上传到提升，只需三步</h2><ol><li>选择记叙文或议论文，输入题目，上传或粘贴作文。上传题目文件后请核对题目栏；扫描PDF及手写稿需先转为文字。</li><li>核对提取的文字与分段，点击“开始批改”。真实批改需要管理员连接 OpenAI；不保存文件或作文历史。</li><li>查看评分、逐项错字、段落改写和范文旁批。教师可复核字数扣分，并导出报告。</li></ol><p>AI评语和纠错需人工复核，不能保证发现所有错误。示例体验使用预设内容，不会为你的作文生成示例分数。请勿上传身份证号等无关个人资料。</p><button class="primary-button" id="guide-done">开始写作 →</button></dialog>
+</body></html>

@@ -1,0 +1,19 @@
+# Connect this repository through https://dashboard.render.com/blueprints
+# The OpenAI key is entered securely in Render, never in this file.
+services:
+  - type: web
+    name: wenmo-essay-marking
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/status
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.14
+      - key: ESSAY_AI_MODEL
+        value: gpt-4.1
+      - key: ESSAY_AI_KEY
+        sync: false
+      - key: WENMO_ALLOWED_ORIGINS
+        value: https://lilyfeiyang1107.github.io
